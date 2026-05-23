@@ -4,7 +4,6 @@ University of Basrah — Computer Engineering Department
 Author: Ali Amer Ibrahim Supervisor: M.Sc. Amjed Ahmed Majied
 Academic Year: 2025–2026
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-Flask_/_Kotlin-orange.svg)](https://flask.palletsprojects.com/)
 
@@ -21,7 +20,7 @@ This project solves this research gap by utilizing **Android Permissions** as im
 
 ---
 
-## 🛠️ System Architecture & Component Interactions
+## System Architecture & Component Interactions
 
 The system leverages a decoupled Client-Server architecture separating mobile-side lightweight data collection from heavy machine learning inference tasks.
 
@@ -43,7 +42,7 @@ The system leverages a decoupled Client-Server architecture separating mobile-si
 
 ---
 
-## 🔄 Project Workflow & Operations
+## Project Workflow & Operations
 
 ### End-to-End Execution Flow
 1. **Initiation:** The user opens the Android security app and taps the "Scan System" button.
@@ -102,43 +101,46 @@ cyber-threat-detection/
 ├── .gitignore
 ├── LICENSE
 └── requirements.txt
+```
 
-🚀 Installation & Local Deployment Guide
+---
+
+## Installation & Local Deployment Guide
 Prerequisites
 Ensure you have Python 3.9+ installed along with Git.
 
-1. Environment Setup
+## 1. Environment Setup
 
-# Clone the repository
+### Clone the repository
 git clone [https://github.com/YOUR_USERNAME/cyber-threat-detection.git](https://github.com/YOUR_USERNAME/cyber-threat-detection.git)
 cd cyber-threat-detection
 
-# Create a isolated virtual environment
+### Create a isolated virtual environment
 python -m venv venv
 
-# Activate the environment
-# On Windows:
+### Activate the environment
+### On Windows:
 venv\Scripts\activate
-# On macOS/Linux:
+### On macOS/Linux:
 source venv/bin/activate
 
-# Install all backend requirements
+### Install all backend requirements
 pip install -r requirements.txt
 
-2. Operating the Jupyter Notebooks
-To run, review, or retrain the models:
+## 2. Operating the Jupyter Notebooks
+### To run, review, or retrain the models:
 
 pip install jupyter
 jupyter notebook notebooks/finalModel.ipynb
 
-3. Launching the Flask REST API Server
+## 3. Launching the Flask REST API Server
 
 python server/app.py
 
-The server will boot locally at http://127.0.0.1:5000/.
+### The server will boot locally at http://127.0.0.1:5000/.
 
-4. Running/Testing the API via Python Client
-You can simulate a transaction payload using the following payload format:
+## 4. Running/Testing the API via Python Client
+### You can simulate a transaction payload using the following payload format:
 
 import requests
 
@@ -149,13 +151,13 @@ payload = {
 response = requests.post(url, json=payload)
 print(response.json())
 
-System Screenshots
+## System Screenshots
 
-Use Case: Client-Manager/User Interactions
-Actors Involved:
-End-User (Client Mobile Node): Demands instant application risk classification without processing or battery strain.
+## Use Case: Client-Manager/User Interactions
+### Actors Involved:
+#### End-User (Client Mobile Node): Demands instant application risk classification without processing or battery strain.
 
-Security Manager (The ML System Environment): Handles rules, validates vectors, generates calculations, and provides security declarations.
+#### Security Manager (The ML System Environment): Handles rules, validates vectors, generates calculations, and provides security declarations.
 
 [ End-User (Client) ] ───── (Requests Scan) ─────> [ Android UI Node ]
          │                                               │
@@ -164,20 +166,20 @@ Security Manager (The ML System Environment): Handles rules, validates vectors, 
 [ API Ingestion Port ] ── (Infers Risk Score) ──> [ System Classifier ]
 
 
-Challenges Faced & Future Roadmap
-Challenges Overcome:
+## Challenges Faced & Future Roadmap
+### Challenges Overcome:
 Class Imbalance & Evasion: Traditional configurations missed sophisticated malware families. Solved by designing 7 custom behavioral metrics and re-anchoring thresholds down to 0.3.
 
-Deployment Gap: Bridged the divide between code execution within isolated Jupyter Notebooks and live runtime transactions over Android clients.
+### Deployment Gap: Bridged the divide between code execution within isolated Jupyter Notebooks and live runtime transactions over Android clients.
 
-Roadmap & Future Extensions:
-Dynamic Analysis Integration: Implementing a sandbox layer to analyze API system actions in real-time alongside static manifests.
+### Roadmap & Future Extensions:
+### Dynamic Analysis Integration: Implementing a sandbox layer to analyze API system actions in real-time alongside static manifests.
 
-Explainable AI (XAI): Integrating SHAP or LIME frameworks into the server backend to return exactly why a certain application was flagged as a threat.
+### Explainable AI (XAI): Integrating SHAP or LIME frameworks into the server backend to return exactly why a certain application was flagged as a threat.
 
-On-Device Inference: Porting the Random Forest model into TensorFlow Lite (TFLite) format to run natively on the mobile OS without requiring internet connectivity.
+### On-Device Inference: Porting the Random Forest model into TensorFlow Lite (TFLite) format to run natively on the mobile OS without requiring internet connectivity.
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 Prepared By: Hussein Zuhair Kadhim & Ali Amer Ibrahim
 Project Supervisor: M.Sc. Amjed Ahmed Majied
